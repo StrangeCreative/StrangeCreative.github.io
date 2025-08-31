@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strange Creative</title>
+    <title>Curiosity & Creation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -67,13 +67,13 @@
     <header class="h-screen flex flex-col items-center justify-center text-center p-6 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a1024/7c3aed?text=STRANGE+CREATIVE');">
         <div class="bg-gray-950 bg-opacity-70 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-purple-800">
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight hero-font">
-                Curiosity is the <span class="gradient-text">catalyst</span>.
+                Curiosity is the <span class="gradient-text">catalyst</span> needed to activate your full creative potential.
             </h1>
             <p class="text-lg sm:text-2xl mt-6 font-medium text-gray-400">
                 Creativity is rebellion. Connection is protest. Together, we’re unstoppable.
             </p>
             <a href="#consultation" class="mt-10 inline-block px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                 Activate your full creative potential
+                Book a Free Consultation
             </a>
         </div>
     </header>
@@ -82,7 +82,7 @@
 
         <!-- About/Philosophy Section -->
         <section class="text-center mb-20 sm:mb-24">
-            <h2 class="text-3xl sm:text-5xl font-bold mb-6 hero-font">Who We Are</h2>
+            <h2 class="text-3xl sm:text-5xl font-bold mb-6 hero-font">Our Cultural Code</h2>
             <div class="max-w-3xl mx-auto text-gray-400 text-lg sm:text-xl space-y-4">
                 <p>We believe that creativity isn't about perfection; it's about courage. We value **honesty** above all. Here, we do not lie. We're dedicated to a process that puts **humanity over skill level**, recognizing that every person has a unique story to tell.</p>
                 <p>We are not just creating for today—we are creating for **tomorrow**. We ask the tough questions, we challenge the status quo, and we build connections that matter.</p>
@@ -225,7 +225,8 @@
                 critiqueOutput.textContent = '';
 
                 // API call to the new proxy server
-                const proxyUrl = "https://strange-creative-proxy.onrender.com/generate-critique"; // NOTE: Change this URL when you deploy the proxy.
+                // NOTE: Replace this with your live Render URL.
+                const proxyUrl = "https://your-service-name.onrender.com/generate-critique";
 
                 const systemPrompt = "You are a mischievous creative muse, a playful but insightful rebel. Your purpose is to give a lighthearted but sharp critique of a creative idea to help it grow stronger. You are not here to tear it down, but to poke and prod it with playful questions, like a creative sibling. Start with a short, fun sentence. Then, provide a concise critique in 2-3 bullet points. Each bullet point should be a single sentence. Finally, end your response with a clear, compelling, and playful call-to-action that encourages the user to book a consultation for a deeper, more human-led creative deep-dive. Do not give positive affirmations or generic encouragement. The critique should be a direct, unformatted response. Do not mention that you are an AI or language model.";
 
