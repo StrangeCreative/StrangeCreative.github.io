@@ -1,269 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiosity & Creation</title>
+    <title>Strange Creative | Portfolio</title>
+    <!-- Chosen Palette: Mystic Amethyst -->
+    <!-- Application Structure Plan: The SPA uses a single-page, top-to-bottom narrative flow. It starts broad with the brand identity (Hero), narrows to core philosophies (Principles), details specific skills (Expertise), and ends with a clear call to action, which is a logical and persuasive flow for a portfolio. Interactivity is introduced via Gemini API-powered content generators within the Expertise section to provide a dynamic demonstration of creative and technical skills. -->
+    <!-- Visualization & Content Choices: The primary visualization is the brand logo. Report Info: Logo concept (Fox, Rabbit, Crow). Goal: Establish a unique, memorable brand identity. Viz/Presentation Method: HTML Canvas with JavaScript drawing. Interaction: An animated drawing effect on page load. Justification: Fulfills the "NO SVG" constraint while creating a custom, on-brand graphic that adds a 'wow' factor. Library/Method: Vanilla JS Canvas API. The other interactive elements are text blocks. Report Info: Expertise in AI Ethics & Art. Goal: Demonstrate active, ongoing engagement with these fields. Presentation Method: Dynamically updated text areas. Interaction: User clicks a button to generate new, relevant content from an LLM. Justification: This showcases practical application of AI skills and creative thinking directly on the portfolio. Library/Method: Gemini API via `fetch`. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-image: radial-gradient(at top, #140d21, #0a0711);
+            background-color: #0D0D0D;
+            color: #F0F0F0;
+            font-family: 'Lora', serif;
         }
-
-        .hero-font {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
         }
-
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #C084FC, #F472B6);
+        .card {
+            background-color: #1A1A1A;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #2a2a2a;
         }
-
-        .card-bg {
-            background-color: #1a1024;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2);
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: #9B59B6;
         }
-
-        .loading-dots:after {
-            content: ' .';
-            animation: dots 1s steps(5, end) infinite;
+        .btn-primary {
+            background-color: #9B59B6;
+            color: #F0F0F0;
+            transition: background-color 0.3s ease;
         }
-
-        @keyframes dots {
-            0%, 20% {
-                color: rgba(0, 0, 0, 0);
-                text-shadow:
-                    .25em 0 0 rgba(0, 0, 0, 0),
-                    .5em 0 0 rgba(0, 0, 0, 0);
-            }
-            40% {
-                color: white;
-                text-shadow:
-                    .25em 0 0 rgba(0, 0, 0, 0),
-                    .5em 0 0 rgba(0, 0, 0, 0);
-            }
-            60% {
-                text-shadow:
-                    .25em 0 0 white,
-                    .5em 0 0 rgba(0, 0, 0, 0);
-            }
-            80%, 100% {
-                text-shadow:
-                    .25em 0 0 white,
-                    .5em 0 0 white;
-            }
+        .btn-primary:hover {
+            background-color: #8e44ad;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #9B59B6;
+            border: 2px solid #9B59B6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #9B59B6;
+            color: #F0F0F0;
         }
     </style>
 </head>
+<body class="antialiased">
 
-<body class="text-gray-200 antialiased">
+    <div class="container mx-auto px-6">
 
-    <!-- Hero Section -->
-    <header class="h-screen flex flex-col items-center justify-center text-center p-6 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a1024/7c3aed?text=STRANGE+CREATIVE');">
-        <div class="bg-gray-950 bg-opacity-70 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-purple-800">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight hero-font">
-                Curiosity is the <span class="gradient-text">catalyst</span> needed to activate your full creative potential.
-            </h1>
-            <p class="text-lg sm:text-2xl mt-6 font-medium text-gray-400">
-                Creativity is rebellion. Connection is protest. Together, we’re unstoppable.
+        <!-- Hero Section -->
+        <header class="py-16 md:py-24 text-center">
+            <canvas id="logo-canvas" width="200" height="200" class="mx-auto mb-6"></canvas>
+            <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight text-white mb-4">Strange Creative</h1>
+            <p class="text-xl md:text-2xl font-light text-[#a3a3a3] leading-relaxed max-w-3xl mx-auto">
+                Where curiosity meets connection.
             </p>
-            <a href="#consultation" class="mt-10 inline-block px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Book a Free Consultation
-            </a>
-        </div>
-    </header>
+        </header>
 
-    <main class="container mx-auto px-4 py-16 sm:py-24">
-
-        <!-- About/Philosophy Section -->
-        <section class="text-center mb-20 sm:mb-24">
-            <h2 class="text-3xl sm:text-5xl font-bold mb-6 hero-font">Our Cultural Code</h2>
-            <div class="max-w-3xl mx-auto text-gray-400 text-lg sm:text-xl space-y-4">
-                <p>We believe that creativity isn't about perfection; it's about courage. We value **honesty** above all. Here, we do not lie. We're dedicated to a process that puts **humanity over skill level**, recognizing that every person has a unique story to tell.</p>
-                <p>We are not just creating for today—we are creating for **tomorrow**. We ask the tough questions, we challenge the status quo, and we build connections that matter.</p>
-            </div>
-        </section>
-
-        <!-- Rituals & Community Section -->
-        <section class="grid md:grid-cols-2 gap-12 mb-20 sm:mb-24">
-            <div class="card-bg p-8 rounded-3xl border border-purple-800 shadow-xl">
-                <h3 class="text-3xl font-bold text-fuchsia-300 mb-4 hero-font">Art & Inquiry</h3>
-                <p class="text-gray-300 text-lg">
-                    Join our weekly live session, "Art & Inquiry," where we explore the intersection of creative expression and critical thinking. It's a space to ask questions, share insights, and get inspired.
-                </p>
-            </div>
-            <div class="card-bg p-8 rounded-3xl border border-fuchsia-800 shadow-xl">
-                <h3 class="text-3xl font-bold text-purple-300 mb-4 hero-font">The Strange Rebellion</h3>
-                <p class="text-gray-300 text-lg">
-                    As part of our Patreon community, you get a monthly spotlight on your creative projects. Join us to support and be supported in your #strangerebellion.
-                </p>
-                <!-- This link needs to be replaced with your actual link from Patreon -->
-                <a href="https://patreon.com/StrangeCreativeArt?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank" class="mt-6 inline-block text-fuchsia-400 hover:underline font-semibold">
-                    Join the rebellion on Patreon &rarr;
-                </a>
-            </div>
-        </section>
-
-        <!-- Coaching Package Section -->
-        <section class="mb-20 sm:mb-24 text-center">
-            <div class="card-bg p-10 rounded-3xl border border-fuchsia-700 max-w-4xl mx-auto shadow-2xl">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 text-red-400 hero-font">Devil's Advocate Coaching</h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-                    This isn't about tearing your ideas down. It's about breaking them apart to build them back stronger. Like the Tower card in tarot, we'll deconstruct your project or idea to reveal a more resilient foundation.
-                </p>
-                <a href="#consultation" class="mt-8 inline-block px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Book a Free Consultation
-                </a>
-            </div>
-        </section>
-
-        <!-- The new Gemini API feature -->
-        <section id="devil-s-advocate-tool" class="mb-20 sm:mb-24 text-center">
-            <div class="card-bg p-10 rounded-3xl border border-fuchsia-700 max-w-4xl mx-auto shadow-2xl">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 text-fuchsia-300 hero-font">Test the Devil's Advocate</h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-6">
-                    Enter a creative idea or project concept below. Our AI will apply a "devil's advocate" approach to challenge your assumptions and help you discover hidden strengths and weaknesses.
-                </p>
-                <textarea id="idea-input" rows="5" class="w-full p-4 rounded-xl border border-fuchsia-700 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all mb-4" placeholder="Briefly describe your creative idea..."></textarea>
-                <button id="unleash-button" class="px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    ✨ Unleash the Devil's Advocate ✨
-                </button>
-                <div id="loading-message" class="mt-4 text-fuchsia-300 text-lg hidden">
-                    Analyzing your idea<span class="loading-dots"></span>
+        <!-- Principles Section -->
+        <section id="principles" class="py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="font-heading text-2xl font-bold text-[#9B59B6] mb-4">Creativity</h3>
+                    <p class="text-[#a3a3a3] leading-relaxed">
+                        From the canvas to the user flow, every element is an opportunity to express a unique solution. My work bridges the gap between art and utility, ensuring every product is not just functional, but also beautiful and memorable.
+                    </p>
                 </div>
-                <div id="critique-output" class="mt-8 p-6 rounded-xl border border-purple-800 bg-gray-900 text-left text-gray-300 whitespace-pre-wrap hidden"></div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section class="mb-20 sm:mb-24 text-center">
-            <h2 class="text-3xl sm:text-5xl font-bold mb-12 hero-font">My Work</h2>
-            <!-- Instructions for the user:
-            This is a placeholder for your portfolio.
-            Replace these <div> blocks with your actual projects.
-            You can use images, project titles, and a brief description.
-            For example:
-            <div class="relative group">
-                <img src="your-image-url.jpg" alt="Description of your work" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
-                    <h4 class="text-xl font-bold text-white">Project Title</h4>
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="font-heading text-2xl font-bold text-[#9B59B6] mb-4">Curiosity</h3>
+                    <p class="text-[#a3a3a3] leading-relaxed">
+                        Driven by a deep curiosity about human behavior and technology. In design and ethics, it's about exploring the 'why' behind user actions and the 'how' behind ethical implications, always seeking a better way forward.
+                    </p>
                 </div>
-            </div>
-            -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Placeholder Project 1 -->
-                <div class="relative group">
-                    <img src="https://placehold.co/600x400/35093A/F0ABFC?text=Art+Project" alt="Placeholder Art Project" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
-                </div>
-                <!-- Placeholder Project 2 -->
-                <div class="relative group">
-                    <img src="https://placehold.co/600x400/2F0735/F0ABFC?text=Web+Design" alt="Placeholder Web Design" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
-                </div>
-                <!-- Placeholder Project 3 -->
-                <div class="relative group">
-                    <img src="https://placehold.co/600x400/35093A/F0ABFC?text=Creative+Writing" alt="Placeholder Creative Writing" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
-                </div>
-                <!-- Placeholder Project 4 -->
-                <div class="relative group">
-                    <img src="https://placehold.co/600x400/2F0735/F0ABFC?text=Consulting" alt="Placeholder Consulting" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
-                </div>
-                <!-- Placeholder Project 5 -->
-                <div class="relative group">
-                    <img src="https://placehold.co/600x400/35093A/F0ABFC?text=Mixed+Media" alt="Placeholder Mixed Media" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
-                </div>
-                <!-- Placeholder Project 6 -->
-                <div class="relative group">
-                    <img src="https://placehold.co/600x400/2F0735/F0ABFC?text=Project+6" alt="Placeholder Project 6" class="rounded-2xl transition-transform duration-300 transform group-hover:scale-105">
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="font-heading text-2xl font-bold text-[#9B59B6] mb-4">Connection</h3>
+                    <p class="text-[#a3a3a3] leading-relaxed">
+                       My goal is to build meaningful connections, whether between a user and a product, a leader and their team, or a technology and its societal impact. I design for empathy and champion responsible innovation that serves humanity.
+                    </p>
                 </div>
             </div>
         </section>
 
-    </main>
+        <!-- Expertise Section -->
+        <section id="expertise" class="py-16">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-center mb-12">My Expertise</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Tech Column -->
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="font-heading text-3xl font-bold mb-6">Tech & Human-Centered Design</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-heading text-xl font-bold text-[#9B59B6]">UX Design</h4>
+                            <p class="text-[#a3a3a3]">Crafting intuitive digital experiences that put the user first through research, prototyping, and testing.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xl font-bold text-[#9B59B6]">AI Ethics</h4>
+                            <p class="text-[#a3a3a3]">Navigating the complex landscape of AI with a focus on fairness, transparency, and accountability.</p>
+                            <div class="mt-4 p-4 rounded-lg bg-[#0D0D0D] border border-[#2a2a2a]">
+                                 <h5 class="font-heading text-lg font-semibold text-white mb-2">AI Ethics Dilemma Generator</h5>
+                                <div id="ethics-output" class="text-sm text-[#a3a3a3] min-h-[60px]">Click the button to generate a scenario...</div>
+                                <button id="generate-ethics-btn" class="font-heading mt-3 w-full btn-secondary text-sm font-bold py-2 px-4 rounded-lg">
+                                    New Scenario
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Creative Column -->
+                <div class="card p-8 rounded-2xl">
+                    <h3 class="font-heading text-3xl font-bold mb-6">Coaching & Creative Expression</h3>
+                     <div class="space-y-6">
+                        <div>
+                            <h4 class="font-heading text-xl font-bold text-[#9B59B6]">Coaching</h4>
+                            <p class="text-[#a3a3a3]">Guiding individuals and teams through career transitions and creative blocks to find their unique voice.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-heading text-xl font-bold text-[#9B59B6]">Painting & Mixed Media</h4>
+                            <p class="text-[#a3a3a3]">My artistic practice is the sandbox where I experiment with new ideas, push boundaries, and inform innovation.</p>
+                            <div class="mt-4 p-4 rounded-lg bg-[#0D0D0D] border border-[#2a2a2a]">
+                                 <h5 class="font-heading text-lg font-semibold text-white mb-2">Creative Spark Generator</h5>
+                                <div id="art-output" class="text-sm text-[#a3a3a3] min-h-[60px]">Click the button for a creative challenge...</div>
+                                <button id="generate-art-btn" class="font-heading mt-3 w-full btn-secondary text-sm font-bold py-2 px-4 rounded-lg">
+                                    New Challenge
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Final CTA Section -->
-    <section id="consultation" class="bg-gray-800 py-16 sm:py-24 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl sm:text-5xl font-bold mb-4 hero-font">Ready to activate your creativity?</h2>
-            <p class="text-lg sm:text-xl text-gray-300 mb-8">
-                Let's chat about your project, your ideas, and your creative rebellion.
+        <!-- Call to Action Section -->
+        <section id="contact" class="py-16 md:py-24 text-center">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-lg text-[#a3a3a3] max-w-2xl mx-auto mb-8">
+                I am always open to exploring new opportunities where my diverse skills can make an impact. If you're interested in a project, a speaking engagement, or just a conversation, I'd love to hear from you.
             </p>
-            <a href="mailto:your_email@example.com" class="inline-block px-10 py-5 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
-                Book Your Free Consultation
-            </a>
-        </div>
-    </section>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="mailto:hireme@strangecreative.com" class="font-heading btn-primary text-lg font-bold px-8 py-3 rounded-lg">Email Me</a>
+                <a href="#" class="font-heading btn-secondary text-lg font-bold px-8 py-3 rounded-lg">View Portfolio</a>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8 text-center text-gray-400">
-        <p class="text-sm">&copy; 2025 Strange Rebellion. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const unleashButton = document.getElementById('unleash-button');
-            const ideaInput = document.getElementById('idea-input');
-            const critiqueOutput = document.getElementById('critique-output');
-            const loadingMessage = document.getElementById('loading-message');
+            
+            // Canvas Logo Drawing
+            const canvas = document.getElementById('logo-canvas');
+            const ctx = canvas.getContext('2d');
+            const scale = window.devicePixelRatio || 1;
+            canvas.width = 200 * scale;
+            canvas.height = 200 * scale;
+            ctx.scale(scale, scale);
 
-            unleashButton.addEventListener('click', async () => {
-                const idea = ideaInput.value.trim();
-                if (!idea) {
-                    critiqueOutput.textContent = 'Please enter a creative idea to receive a critique.';
-                    critiqueOutput.classList.remove('hidden');
-                    return;
+            const paths = [
+                // Fox Head and Body
+                { points: [[130, 30], [160, 50], [145, 80], [100, 110], [60, 95], [50, 65], [70, 40], [100, 20], [130, 30]], tension: 0.5 },
+                // Fox Ear (Rabbit hint)
+                { points: [[130, 30], [120, 10], [110, 30]], tension: 0.5 },
+                // Fox Tail
+                { points: [[60, 95], [30, 120], [20, 160], [50, 180], [80, 150], [70, 120]], tension: 0.6 },
+                 // Crow on back
+                { points: [[85, 98], [80, 90], [90, 85], [100, 90], [95, 98], [85, 98]], tension: 0.4 }
+            ];
+
+            function drawSpline(points, tension) {
+                ctx.moveTo(points[0][0], points[0][1]);
+                for (let i = 0; i < points.length - 1; i++) {
+                    const p0 = (i > 0) ? points[i - 1] : points[0];
+                    const p1 = points[i];
+                    const p2 = points[i + 1];
+                    const p3 = (i != points.length - 2) ? points[i + 2] : p2;
+
+                    for (let t = 0; t < 1; t += 0.05) {
+                        const t2 = t * t;
+                        const t3 = t2 * t;
+                        const a = 2 * t3 - 3 * t2 + 1;
+                        const b = t3 - 2 * t2 + t;
+                        const c = -2 * t3 + 3 * t2;
+                        const d = t3 - t2;
+                        
+                        const x = a * p1[0] + b * (p2[0] - p0[0]) * tension + c * p2[0] + d * (p3[0] - p1[0]) * tension;
+                        const y = a * p1[1] + b * (p2[1] - p0[1]) * tension + c * p2[1] + d * (p3[1] - p1[1]) * tension;
+                        ctx.lineTo(x, y);
+                    }
                 }
+            }
+            
+            let progress = 0;
+            function animateLogo() {
+                progress += 0.01;
+                if (progress > 1) progress = 1;
 
-                // Show loading state
-                unleashButton.disabled = true;
-                loadingMessage.classList.remove('hidden');
-                critiqueOutput.classList.add('hidden');
-                critiqueOutput.textContent = '';
+                ctx.clearRect(0, 0, 200, 200);
+                ctx.strokeStyle = '#9B59B6';
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                
+                ctx.beginPath();
+                paths.forEach(path => drawSpline(path.points, path.tension));
+                ctx.stroke();
 
-                // API call to the new proxy server
-                // NOTE: This URL has been updated to your live Render service.
-                const proxyUrl = "https://strange-creative-proxy.onrender.com/generate-critique";
+                ctx.setLineDash([2000, 2000]);
+                ctx.lineDashOffset = 2000 * (1 - progress);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animateLogo);
+                } else {
+                     ctx.setLineDash([]); 
+                }
+            }
+            animateLogo();
 
-                const systemPrompt = "You are a mischievous creative muse, a playful but insightful rebel. Your purpose is to give a lighthearted but sharp critique of a creative idea to help it grow stronger. You are not here to tear it down, but to poke and prod it with playful questions, like a creative sibling. Start with a short, fun sentence. Then, provide a concise critique in 2-3 bullet points. Each bullet point should be a single sentence. Finally, end your response with a clear, compelling, and playful call-to-action that encourages the user to book a consultation for a deeper, more human-led creative deep-dive. Do not give positive affirmations or generic encouragement. The critique should be a direct, unformatted response. Do not mention that you are an AI or language model.";
+            // Gemini API Integration
+            const ethicsBtn = document.getElementById('generate-ethics-btn');
+            const ethicsOutput = document.getElementById('ethics-output');
+            const artBtn = document.getElementById('generate-art-btn');
+            const artOutput = document.getElementById('art-output');
+
+            // --- CORRECTED API URL to use the proxy ---
+            const PROXY_URL = 'https://strange-creative-proxy.onrender.com/generateContent';
+            const API_URL = PROXY_URL;
+            const apiKey = ""; 
+
+            async function callGemini(button, outputElement, systemPrompt, userQuery) {
+                const originalText = button.textContent;
+                button.textContent = 'Generating...';
+                button.disabled = true;
+                outputElement.textContent = '';
 
                 try {
-                    const response = await fetch(proxyUrl, {
+                    const payload = {
+                        contents: [{ parts: [{ text: userQuery }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] },
+                    };
+
+                    const response = await fetch(API_URL, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ idea, systemPrompt })
+                        body: JSON.stringify(payload)
                     });
 
-                    if (!response.ok) {
-                        throw new Error(`Proxy server error: ${response.status} ${response.statusText}`);
-                    }
-
+                    if (!response.ok) throw new Error(`API error: ${response.status}`);
+                    
                     const result = await response.json();
-                    const text = result?.critique;
+                    const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Could not generate a response. Please try again.";
+                    outputElement.textContent = text;
+                } catch (error) {
+                    console.error("Gemini API Error:", error);
+                    outputElement.textContent = "An error occurred. Please try again later.";
+                } finally {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }
+            }
 
-                    if (text) {
-                       critiqueOutput.textContent = text;
-                        critiqueOutput.classList.remove('hidden');
-                    } else {
-                        critiqueOutput.textContent = 'Sorry, the critique service is currently unavailable. Please try again later.';
-                       critiqueOutput.classList.remove('hidden');
-                  }
-               } catch (error) {
-                   console.error('Fetch error:', error);
-                   critiqueOutput.textContent = 'An error occurred while fetching the critique. Please check the console for more details.';
-                   critiqueOutput.classList.remove('hidden');
-                }
-                    finally {
-                    // Hide loading state and re-enable button
-                    loadingMessage.classList.add('hidden');
-                    unleashButton.disabled = false;
-                }
+            ethicsBtn.addEventListener('click', () => {
+                const systemPrompt = "You are an AI ethics advisor. Generate a brief, complex, and realistic ethical dilemma related to UX design and AI, suitable for a thought-provoking discussion. One concise paragraph.";
+                const userQuery = "Generate an ethical dilemma about an AI system and its impact on user experience.";
+                callGemini(ethicsBtn, ethicsOutput, systemPrompt, userQuery);
+            });
+
+            artBtn.addEventListener('click', () => {
+                const systemPrompt = "You are a creative coach and mixed-media artist. Generate a single, unique mixed-media art challenge combining everyday materials with a conceptual prompt. It should be inspiring and encourage experimentation.";
+                const userQuery = "Create a unique mixed-media art challenge.";
+                callGemini(artBtn, artOutput, systemPrompt, userQuery);
             });
         });
     </script>
 </body>
-
 </html>
