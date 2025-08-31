@@ -251,10 +251,10 @@
                         critiqueOutput.textContent = 'Sorry, the critique service is currently unavailable. Please try again later.';
                         critiqueOutput.classList.remove('hidden');
                     }
-                } catch (error) {
-                    console.error('Fetch error:', error);
-                    critiqueOutput.textContent = 'An error occurred while fetching the critique. Please check the console for more details.';
-                    critiqueOutput.classList.remove('hidden');
+                }// catch (error) {
+                   // console.error('Fetch error:', error);
+                   // critiqueOutput.textContent = 'An error occurred while fetching the critique. Please check the console for more details.';
+                   // critiqueOutput.classList.remove('hidden');
                 } finally {
                     // Hide loading state and re-enable button
                     loadingMessage.classList.add('hidden');
