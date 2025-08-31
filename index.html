@@ -237,20 +237,20 @@
                         body: JSON.stringify({ idea, systemPrompt })
                     });
 
-                  //  if (!response.ok) {
-                      //  throw new Error(`Proxy server error: ${response.status} ${response.statusText}`);
-                  //  }
+                    if (!response.ok) {
+                        throw new Error(`Proxy server error: ${response.status} ${response.statusText}`);
+                    }
 
-                  //  const result = await response.json();
-                  //  const text = result?.critique;
+                    const result = await response.json();
+                    const text = result?.critique;
 
-                   // if (text) {
-                  //      critiqueOutput.textContent = text;
-                  //      critiqueOutput.classList.remove('hidden');
-                 //   } else {
-                    //    critiqueOutput.textContent = 'Sorry, the critique service is currently unavailable. Please try again later.';
-                  //      critiqueOutput.classList.remove('hidden');
-                  //  }
+                    if (text) {
+                       critiqueOutput.textContent = text;
+                        critiqueOutput.classList.remove('hidden');
+                    } else {
+                        critiqueOutput.textContent = 'Sorry, the critique service is currently unavailable. Please try again later.';
+                       critiqueOutput.classList.remove('hidden');
+                  }
                } catch (error) {
                    console.error('Fetch error:', error);
                    critiqueOutput.textContent = 'An error occurred while fetching the critique. Please check the console for more details.';
