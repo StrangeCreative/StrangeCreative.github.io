@@ -224,30 +224,24 @@
                 critiqueOutput.classList.add('hidden');
                 critiqueOutput.textContent = '';
 
-                // Gemini API configuration
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                // API call to the new proxy server
+                const proxyUrl = "https://strange-creative-proxy.onrender.com"; // NOTE: Change this URL when you deploy the proxy.
 
-                const systemPrompt = "You are a creative 'Devil's Advocate.' Your purpose is to challenge and deconstruct a creative idea to make it stronger. Provide a concise critique (around 2-3 paragraphs) that asks thought-provoking questions, identifies potential weaknesses, or suggests unexpected angles. Your tone should be honest and insightful, not negative. Focus on helping the user build a more resilient foundation for their project. Do not give positive affirmations or generic encouragement. Do not mention that you are an AI or language model. The critique should be a direct, unformatted response.";
-
-                const payload = {
-                    contents: [{ parts: [{ text: idea }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] },
-                };
+                const systemPrompt = "You are a mischievous creative muse, a playful but insightful rebel. Your purpose is to give a lighthearted but sharp critique of a creative idea to help it grow stronger. You are not here to tear it down, but to poke and prod it with playful questions, like a creative sibling. Start with a short, fun sentence. Then, provide a concise critique in 2-3 bullet points. Each bullet point should be a single sentence. Finally, end your response with a clear, compelling, and playful call-to-action that encourages the user to book a consultation for a deeper, more human-led creative deep-dive. Do not give positive affirmations or generic encouragement. The critique should be a direct, unformatted response. Do not mention that you are an AI or language model.";
 
                 try {
-                    const response = await fetch(apiUrl, {
+                    const response = await fetch(proxyUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({ idea, systemPrompt })
                     });
 
                     if (!response.ok) {
-                        throw new Error(`API error: ${response.status} ${response.statusText}`);
+                        throw new Error(`Proxy server error: ${response.status} ${response.statusText}`);
                     }
 
                     const result = await response.json();
-                    const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+                    const text = result?.critique;
 
                     if (text) {
                         critiqueOutput.textContent = text;
