@@ -63,91 +63,66 @@
 
 <body class="text-gray-200 antialiased">
 
-    <!-- Hero Section -->
-    <header class="h-screen flex flex-col items-center justify-center text-center p-6 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a1024/7c3aed?text=STRANGE+CREATIVE');">
-        <div class="bg-gray-950 bg-opacity-70 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-purple-800">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight hero-font">
-                <span class="gradient-text">Creativity</span> is rebellion.
-                <span class="gradient-text">Connection</span> is protest.
-                Together, we are <span class="gradient-text">unstoppable.</span>
-            </h1>
-      <!-- <p class="text-lg sm:text-2xl mt-6 font-medium text-gray-400">
-                Curiosity is the catalyst that you need to unlock your full potention.</p> <p>Are you curious yet?
-            </p> -->
-            <a href="#consultation" class="mt-10 inline-block px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Book a Free Consultation
-            </a>
+    <!-- New Main Hero Header Section -->
+    <header class="relative flex flex-col items-center justify-center text-center min-h-[60vh] py-16 bg-gradient-to-br from-fuchsia-900 via-purple-900 to-gray-950 overflow-hidden">
+        <div class="absolute inset-0 opacity-30 bg-[url('https://placehold.co/1920x1080/1a1024/7c3aed?text=STRANGE+CREATIVE')] bg-cover bg-center"></div>
+        <div class="relative z-10 max-w-3xl mx-auto p-8">
+            <img src="https://placehold.co/120x120/1a1024/fff?text=LOGO" alt="Logo Placeholder" class="mx-auto mb-6 w-32 h-32 rounded-full border-4 border-fuchsia-500 shadow-xl bg-gray-900 bg-opacity-60 object-cover">
+            <h1 class="text-5xl sm:text-7xl font-extrabold hero-font mb-4 gradient-text drop-shadow-lg">Strange Creative</h1>
+            <p class="text-xl sm:text-2xl text-gray-200 mb-8 font-medium">Where creativity meets courage, and connection sparks rebellion.</p>
         </div>
     </header>
 
+    <!-- Secondary Hero Section (smaller) -->
+    <section class="flex flex-col items-center justify-center text-center p-6 bg-cover bg-center mb-8" style="background-image: url('https://placehold.co/1920x1080/1a1024/7c3aed?text=STRANGE+CREATIVE');">
+        <div class="bg-gray-950 bg-opacity-70 backdrop-blur-sm rounded-3xl p-8 max-w-4xl mx-auto border border-purple-800">
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight hero-font mb-2">
+                <span class="gradient-text">Creativity</span> is rebellion.
+                <span class="gradient-text">Connection</span> is protest.
+                Together, we are <span class="gradient-text">unstoppable.</span>
+            </h2>
+            <a href="/connect.html" class="mt-8 inline-block px-10 py-5 bg-fuchsia-700 hover:bg-fuchsia-800 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg text-2xl">
+                Connect with Strange Creative &rarr;
+            </a>
+        </div>
+    </section>
+
     <main class="container mx-auto px-4 py-16 sm:py-24">
 
-        <!-- About/Philosophy Section -->
-     <!--   <section class="grid md:grid-cols-2 gap-12 mb-20 sm:mb-24">
-          <div class="relative rounded-2xl overflow-hidden w-64 h-64">
-            <img src="https://raw.githubusercontent.com/StrangeCreative/StrangeCreative.github.io/main/CGHAIHeadshot2.png" alt="AI Headshot" class="w-full h-full object-cover rounded-2xl">
-            <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity rounded-2xl">
-              <span class="font-heading text-xl font-bold text-white">"Charlie"</span>
-            </div>
-          </div>
-         </section> -->
-         <section class="text-center mb-20 sm:mb-24"> -->
-            <h2 class="text-3xl sm:text-5xl font-bold mb-6 hero-font">Who Am I?</h2>
-            <div class="max-w-3xl mx-auto text-gray-400 text-lg sm:text-xl space-y-4">
-                <p> My name is Charlesice and I am a human despite this AI generated headshot.
-                    I believe in authenticity and navigating life with joy rather than judgement. 
-                    Life is hard no matter what, living mindfully even more-so. 
-                    We do not need shame, or guilt, or punishment to motivate us - we need purpose and we need to feel seen. 
-                    Whether through my art or my words, my design or my story, I want to help us humans connect with our creativity and with each other. 
-                    We believe that creativity isn't about perfection; it's about courage. We value **honesty** above all. Here, we do not lie. We're dedicated to a process that puts **humanity over skill level**, recognizing that every person has a unique story to tell.</p>
-           <!-- <p>We are not just creating for today—we are creating for **tomorrow**. We ask the tough questions, we challenge the status quo, and we build connections that matter.</p>
-            </div> -->
-        </section>
+                <!-- About/Philosophy Section -->
+                        <section class="grid md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-12 items-center mb-20 sm:mb-24">
+                            <div class="flex justify-end items-center h-full">
+                                <div class="relative rounded-2xl overflow-hidden w-56 h-56 md:w-64 md:h-64">
+                                    <img src="https://raw.githubusercontent.com/StrangeCreative/StrangeCreative.github.io/main/CGHAIHeadshot2.png" alt="AI Headshot" class="w-full h-full object-cover rounded-2xl">
+                                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity rounded-2xl">
+                                        <span class="font-heading text-xl font-bold text-white">"Charlie"</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-center h-full" style="min-height:14rem;">
+                                <h2 class="text-3xl sm:text-5xl font-bold mb-6 hero-font text-center md:text-left">Hai, I'm Charlesice!</h2>
+                                <div class="max-w-3xl text-gray-400 text-lg sm:text-xl space-y-4">
+                                                                            <div class="text-justify" style="text-justify: inter-word;">
+                                                                                <p style="margin-bottom: 1.25em;">Despite this *hopefully obvious* AI headshot, I am a human. My mission as a creative is to help people reconnect with their joy and to re-infuse technology with humanity.</p>
+                                                                                <p>Strange Creative is the home for both the community I'm cultivating and the professional services I provide. </p>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </section>
           </div>
 
-        <!-- Rituals & Community Section -->
-        <section class="grid md:grid-cols-2 gap-12 mb-20 sm:mb-24">
-            <div class="card-bg p-8 rounded-3xl border border-purple-800 shadow-xl">
-                <h3 class="text-3xl font-bold text-fuchsia-300 mb-4 hero-font">Art & Inquiry</h3>
-                <p class="text-gray-300 text-lg">
-                    Join our weekly live session, "Art & Inquiry," where we explore the intersection of creative expression and critical thinking. It's a space to ask questions, share insights, and get inspired.
-                </p>
-            </div>
-            <div class="card-bg p-8 rounded-3xl border border-fuchsia-800 shadow-xl">
-                <h3 class="text-3xl font-bold text-purple-300 mb-4 hero-font">The Strange Rebellion</h3>
-                <p class="text-gray-300 text-lg">
-                    As part of our Patreon community, you get a monthly spotlight on your creative projects. Join us to support and be supported in your #strangerebellion.
-                </p>
-                <!-- This link needs to be replaced with your actual link from Patreon -->
-                <a href="https://patreon.com/StrangeCreativeArt?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank" class="mt-6 inline-block text-fuchsia-400 hover:underline font-semibold">
-                    Join the rebellion on Patreon &rarr;
-                </a>
-            </div>
-        </section>
-
-        <!-- Coaching Package Section -->
-        <section class="mb-20 sm:mb-24 text-center">
-            <div class="card-bg p-10 rounded-3xl border border-fuchsia-700 max-w-4xl mx-auto shadow-2xl">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 text-red-400 hero-font">Devil's Advocate Coaching</h2>
-                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-                    This isn't about tearing your ideas down. It's about breaking them apart to build them back stronger. Like the Tower card in tarot, we'll deconstruct your project or idea to reveal a more resilient foundation.
-                </p>
-                <a href="#consultation" class="mt-8 inline-block px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Book a Free Consultation
-                </a>
-            </div>
-        </section>
+        <!-- Connect Button Section -->
 
         <!-- The new Gemini API feature -->
         <section id="devil-s-advocate-tool" class="mb-20 sm:mb-24 text-center">
             <div class="card-bg p-10 rounded-3xl border border-fuchsia-700 max-w-4xl mx-auto shadow-2xl">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 text-fuchsia-300 hero-font">Test the Devil's Advocate</h2>
+                <h2 class="text-3xl sm:text-5xl font-bold mb-4 text-fuchsia-300 hero-font">Idea Playground</h2>
                 <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-6">
-                    Enter a creative idea or project concept below. Our AI will apply a "devil's advocate" approach to challenge your assumptions and help you discover hidden strengths and weaknesses.
+                    Got a creative idea you want to play with? This is a fun tool to get a fresh perspective. Enter your idea below and see what playful critiques and questions come up to help you think differently about it.
                 </p>
                 <textarea id="idea-input" rows="5" class="w-full p-4 rounded-xl border border-fuchsia-700 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all mb-4" placeholder="Briefly describe your creative idea..."></textarea>
                 <button id="unleash-button" class="px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    ✨ Unleash the Devil's Advocate ✨
+                    ✨Let's Play✨
                 </button>
                 <div id="loading-message" class="mt-4 text-fuchsia-300 text-lg hidden">
                     Analyzing your idea<span class="loading-dots"></span>
@@ -155,6 +130,10 @@
                 <div id="critique-output" class="mt-8 p-6 rounded-xl border border-purple-800 bg-gray-900 text-left text-gray-300 whitespace-pre-wrap hidden"></div>
             </div>
         </section>
+
+        <!-- Rituals & Community Section -->
+
+
 
         <!-- Portfolio Section -->
         <section class="mb-20 sm:mb-24 text-center">
@@ -217,6 +196,37 @@
     <!-- Footer -->
     <footer class="bg-gray-900 py-8 text-center text-gray-400">
         <p class="text-sm">&copy; 2025 Strange Rebellion. All rights reserved.</p>
+        <!-- Rituals & Community Section moved to bottom -->
+        <div class="mt-12">
+            <section class="grid md:grid-cols-2 gap-12 mb-20 sm:mb-24">
+                <div class="card-bg p-8 rounded-3xl border border-purple-800 shadow-xl">
+                    <h3 class="text-3xl font-bold text-fuchsia-300 mb-4 hero-font">Art & Inquiry</h3>
+                    <p class="text-gray-300 text-lg">
+                        Join our weekly live session, "Art & Inquiry," where we explore the intersection of creative expression and critical thinking. It's a space to ask questions, share insights, and get inspired.
+                    </p>
+                </div>
+                <div class="card-bg p-8 rounded-3xl border border-fuchsia-800 shadow-xl">
+                    <h3 class="text-3xl font-bold text-purple-300 mb-4 hero-font">The Strange Rebellion</h3>
+                    <p class="text-gray-300 text-lg">
+                        As part of our Patreon community, you get a monthly spotlight on your creative projects. Join us to support and be supported in your #strangerebellion.
+                    </p>
+                    <a href="https://patreon.com/StrangeCreativeArt?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink" target="_blank" class="mt-6 inline-block text-fuchsia-400 hover:underline font-semibold">
+                        Join the rebellion on Patreon &rarr;
+                    </a>
+                </div>
+            </section>
+            <section class="mb-20 sm:mb-24 text-center">
+                <div class="card-bg p-10 rounded-3xl border border-fuchsia-700 max-w-4xl mx-auto shadow-2xl">
+                    <h2 class="text-3xl sm:text-5xl font-bold mb-4 text-red-400 hero-font">Devil's Advocate Coaching</h2>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                        This isn't about tearing your ideas down. It's about breaking them apart to build them back stronger. Like the Tower card in tarot, we'll deconstruct your project or idea to reveal a more resilient foundation.
+                    </p>
+                    <a href="#consultation" class="mt-8 inline-block px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Book a Free Consultation
+                    </a>
+                </div>
+            </section>
+        </div>
     </footer>
 
     <script>
@@ -246,7 +256,34 @@
 
                 //const systemPrompt = "You are a mischievous creative muse, a playful but insightful rebel. Your purpose is to give a lighthearted but sharp critique of a creative idea to help it grow stronger. You are not here to tear it down, but to poke and prod it with playful questions, like a creative sibling. Start with a short, fun sentence. Then, provide a concise critique in 2-3 bullet points. Each bullet point should be a single sentence. Finally, end your response with a clear, compelling, and playful call-to-action that encourages the user to book a consultation for a deeper, more human-led creative deep-dive. Do not give positive affirmations or generic encouragement. The critique should be a direct, unformatted response. Do not mention that you are an AI or language model.";
                 // the old systemPrompt above new below
-                const systemPrompt = "You are a mischievous creative muse. Provide a lighthearted but sharp critique of a creative idea to help it grow stronger. Give 2-3 single-sentence bullet points with playful questions. End with a compelling, playful call-to-action for a consultation.";
+
+                const systemPrompt = `You are the "Idea Playground," a creative, playful, and non-judgmental partner. Your mission is to help users think differently about their creative ideas and project concepts. You are a collaborator, not a critic.
+
+Your goal is to provide a fresh perspective by asking playful, open-ended questions and offering imaginative scenarios. You will never give direct negative feedback, judgments, or definitive statements about an idea's flaws. Instead, your output should consist solely of questions and lighthearted provocations that encourage the user to explore their assumptions and uncover new possibilities.
+
+Frame your responses with a tone that is encouraging, curious, and aligns with the philosophy that creativity is about courage and humanity. Focus on helping the user find the joy and core purpose in their idea.
+
+Instructions:
+
+Read the user's idea carefully.
+
+Brainstorm playful questions and creative scenarios that would challenge the user's thinking without being critical.
+
+Structure your response as a list of questions and short, whimsical prompts.
+
+Focus on the "why" and "what if" of the idea. For example:
+
+Instead of: "This might be too complicated for a user."
+
+Ask: "If you had to explain your idea to a five-year-old using only three crayons, what would you draw?"
+
+Instead of: "This part seems impractical."
+
+Ask: "What would be the most surprisingly delightful way your idea could fail? What could we learn from that?"
+
+Prioritize the human element. Ask questions about the feelings and experiences the idea is meant to evoke.
+
+End with an encouraging note that celebrates their creative courage.`;
 
                 try {
                     const response = await fetch(proxyUrl, {
