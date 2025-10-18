@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Strange Creative</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(at top, #2d183a, #0a0711);
+            background-color: #1a1024;
+        }
+        .hero-font { font-family: 'Playfair Display', serif; }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #a892c2, #c084fc, #e9458b, #e9458b);
+        }
+        .card-bg {
+            background-color: #1a1024;
+            box-shadow: 0 4px 6px rgba(45, 24, 58, 0.15), 0 10px 20px rgba(45, 24, 58, 0.25);
+        }
+    </style>
+</head>
+<body class="text-gray-200 antialiased">
+    <!-- Navigation Menu -->
+    <nav class="fixed top-6 right-6 z-50 flex flex-col items-end space-y-2">
+        <a href="index.html" class="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-2 px-4 rounded-full shadow transition-all text-sm">Home</a>
+        <a href="art-project.html" class="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-2 px-4 rounded-full shadow transition-all text-sm">Art Collections</a>
+        <a href="blog.html" class="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-2 px-4 rounded-full shadow transition-all text-sm">Blog</a>
+        <a href="connect.html" class="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-bold py-2 px-4 rounded-full shadow transition-all text-sm">Connect</a>
+    </nav>
+
+    <header class="relative flex flex-col items-center justify-center text-center min-h-[40vh] py-12 bg-gradient-to-br from-[#2d183a] via-[#1a1024] to-[#0a0711] overflow-hidden">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://placehold.co/1920x1080/2d183a/1a1024?text=STRANGE+CREATIVE+BLOG')] bg-cover bg-center"></div>
+        <div class="relative z-10 max-w-3xl mx-auto p-8 flex flex-col items-center">
+            <h1 class="text-5xl sm:text-7xl font-extrabold hero-font mb-4 gradient-text drop-shadow-lg">Blog</h1>
+            <p class="text-lg max-w-2xl mx-auto text-gray-300">Thoughts, process, and stories from the Strange Creative journey.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 sm:py-24">
+        <section class="space-y-12 max-w-3xl mx-auto">
+            <!-- Blog Post 1 -->
+            <article class="card-bg p-8 rounded-3xl border border-fuchsia-700 shadow-2xl">
+                <h2 class="text-3xl font-bold mb-2 hero-font gradient-text">Good Design, Bad System</h2>
+                <p class="text-sm text-gray-400 mb-4">April 2025 &bull; by Charlesice</p>
+                <div class="text-lg text-gray-200 space-y-4">
+                    <p>
+                    Not to go off the rails right away, but charm pricing—where items are priced at $9.99 instead of $10 to make them seem cheaper—feels like an inevitable byproduct of capitalism. If consumers are informed and have real choices, these psychological pricing tricks aren’t that significant. It’d be silly for any company not to market themselves in the most effective way possible. As a designer, if I’ve poured time and soul into something, I *want* the hard sell.
+
+                    Ideally, we’d all get to support brands that improve the world somehow. Realistically, that’s not always possible—we make the best decisions we can within our means. Deception is different, though. We’ve all tried to buy something that looked like a deal, only to find ridiculous shipping fees tacked on. Ticketmaster comes to mind. They’ve been challenged over and over, but the consequences rarely stick. They exploit emotion—creating false scarcity with dynamic pricing and hiding fees. Sure, there’s a fee toggle now, but you can bet that took internal battles. I can imagine some designer agonizing over how to make that transparent *and* get it approved.
+
+                    It’s a strange landscape—we’re more aware of monopolies, yet have fewer options. Just a couple of companies dominate search engines, browsers, phones, groceries. Add Google/Facebook sign-ins and Apple Pay, and suddenly these platforms are embedded in daily life. Disconnecting takes time and energy most people don’t have. Folks just need the dang thing to work before their next shift—and that’s valid. Everyone is working within their own shrinking circle of control.
+
+                    There’s also the double-edged sword of branding. Duolingo had a cult following with its wild campaigns—Squid Game collabs, fake funerals, chaotic icons. Then a CEO (not sure which) says they’ll focus on AI and it was not received well. Oof.  People already say Duolingo feels robotic and lacks conversation tools. Their multilingual course expansion actually made sense—playful, ambitious, accessible. But once users felt that shift in values, the trust began to crack. I’d love to believe they’ll find new roles for displaced workers. However, as someone who’s contracted before, that’s rarely the reality.
+
+                    At the end of the day, perception and trust matter. That’s what I care about as a user—and as a designer. I want to create with integrity and ingenuity.
+                    
+                    </p>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="card-bg p-8 rounded-3xl border border-fuchsia-
+            700 shadow-2xl">
+                <h2 class="text-3xl font-bold mb-2 hero-font gradient-text">The App Era Isn’t Ending</h2>
+                <p class="text-sm text-gray-400 mb-4">March 2025 &bull; by Charlesice</p>
+                <div class="text-lg text-gray-200 space-y-4">
+                    <p>
+                    But It Definitely Needs to Evolve </p>
+                    <p>
+                    There was so much resistance to Windows 10 when it dropped—like not updating was actually a long-term plan. But one of the biggest shifts in that update was moving everything to an app-based model, making it more compatible with tablets and hybrid laptops. Around the same time, the iPad Pro launched, and it felt like big tech had quietly agreed: we’re merging worlds now. Desktop, tablet, mobile—it was all starting to blur.
+                        </p>
+                    <p>
+                    There were growing pains, for sure. But it was also kind of a fun time. Designers and developers were experimenting, playing with modalities, visual styles, and new priorities. It was messy—but exciting.
+                    </p>
+                    <p>
+                    Now? We’ve fully committed. Even tools that live in your browser are designed like apps. Our relationship with apps feels irreversible. And while I don’t think we need to undo that shift, it’s clear some things need to change.
+                    </p>
+                    <p>
+                    One obvious direction is simplification. The app market has exploded to the point where it’s overwhelming. Companies like Apple and Adobe have already started bundling tools into cleaner, all-in-one systems—but there’s a catch. The more convenient something is, the more likely it is to lock you in. There’s growing awareness that convenience can be a trap, especially when it comes from the same handful of companies.
+                    </p>
+                    <p> 
+                    Platforms like Android and iOS could do more with their built-in tools to reduce that chaos. Some progress has been made—like app libraries and smarter suggestions—but those features still feel buried. More accessible solutions are possible.
+                    </p>
+                    <p> 
+                    And if every major company is going all-in on AI, why not use it to help people actually manage their digital lives? Imagine an AI layer that helps you navigate across apps, rather than trapping you inside one ecosystem. People shouldn’t have to pledge loyalty to a single brand just to get a smooth experience.
+                    </p>
+                    <p> 
+                    There’s a strange oscillation happening in tech right now. Users are pushing back—through their choices, through their dollars, and through their public discourse. Crypto promised decentralization; AI, in contrast, is accelerating centralization. We’re in a tug-of-war between liberation and dependence.
+                    </p>
+                    <p>      
+                    But here’s the thing about flux: it creates space.
+                    </p>
+                    <p> 
+                    Beneath the surface tension of today’s fractured digital ecosystems lies enormous opportunity—for more humane design, more adaptive systems, and more creative agency. Shaky ground is fertile ground for innovation.
+                    </p>
+                </div>
