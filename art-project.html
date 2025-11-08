@@ -214,6 +214,27 @@
                 document.getElementById('fullscreen-modal').classList.add('hidden');
             }
         });
+
+        // simple deterrent: disables context menu and dragging on images
+        document.addEventListener('contextmenu', function(e) {
+          // Allow contextmenu for inputs/textarea if you need them
+          if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+          }
+        });
+
+        // disable drag on images
+        document.querySelectorAll('img').forEach(img => {
+          img.setAttribute('draggable', 'false');
+          img.addEventListener('dragstart', e => e.preventDefault());
+        });
+
+        // optional: prevents selection
+        document.addEventListener('selectstart', e => {
+          if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+          }
+        });
     </script>
 </body>
 </html>
